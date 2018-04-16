@@ -34,6 +34,9 @@
 // });
 
 
+use App\Task;
+
+
 Route::get( '/', function() {
 	$name = 'World';
 	$tasks = DB::table( 'tasks' )->get();
@@ -44,14 +47,18 @@ Route::get( '/', function() {
 
 Route::get( '/tasks', function() {
 
-	$tasks = DB::table( 'tasks' )->get();
+	//$tasks = DB::table( 'tasks' )->get();
+	// $tasks = App\Task::all();
+	$tasks = Task::all();
 
 	return view( 'tasks.index', compact( 'tasks' ) );
 });
 
 Route::get( '/tasks/{task}', function( $id ) {
 
-	$task = DB::table( 'tasks' )->find( $id );
+	// $task = DB::table( 'tasks' )->find( $id );
+	// $task = App\Task::find($id);
+	$task = Task::find($id);
 
 	$name = 'World';
 	return view( 'tasks.show', compact( 'task', 'name' ) );

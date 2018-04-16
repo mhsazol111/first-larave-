@@ -14,5 +14,7 @@
 			</li>
 		@endforeach
 	</ul>
+
+	<h3><a href="/">Go back to home</a></h3>
 </body>
 </html>
