@@ -6,5 +6,7 @@
 </head>
 <body>
 	<h1> {{ $task->body }} </h1>
+
+	<a href="/tasks">Go back</a>
 </body>
 </html>
